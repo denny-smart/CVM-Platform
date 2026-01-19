@@ -6,8 +6,8 @@
     "scripts": {
         "start": "node app",
         "dev": "nodemon app",
-        "build": "netlify-lambda build netlify/functions --config ./webpack.config.js",
-        "serve": "npx netlify-lambda serve netlify/functions"
+        "build": "webpack --config webpack.config.js",
+        "serve": "netlify dev"
     },
     "keywords": [],
     "author": "",

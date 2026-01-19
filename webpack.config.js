@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-    entry: './netlify/functions/app.js', // Ensure this path is correct
+    entry: './src/functions/app.js', // Updated entry point
     output: {
-        path: path.resolve(__dirname, 'functions-build'),
+        path: path.resolve(__dirname, 'netlify/functions'),
         filename: 'app.js',
         libraryTarget: 'commonjs2', // Ensures compatibility with AWS Lambda
     },
