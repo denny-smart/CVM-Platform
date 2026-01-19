@@ -11,14 +11,10 @@ const pool = new Pool({
     }
 });
 
-// Test the connection
-pool.connect((err, client, release) => {
-    if (err) {
-        console.error('Database connection failed:', err.stack);
-    } else {
-        console.log('Database connected successfully.');
-        release();
-    }
+// Unexpected error handling for the idle pool
+pool.on('error', (err, client) => {
+    console.error('Unexpected error on idle client', err);
+    process.exit(-1);
 });
 
 module.exports = pool;
