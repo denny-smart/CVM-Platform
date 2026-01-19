@@ -1,8 +1,21 @@
 <nav class="navbar">
-    <nav>
-      <ul>
+    <div class="nav-brand">
+        <span>🐝</span>
+        <span>HelpingHive</span>
+    </div>
+    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+        ☰
+    </button>
+    <ul id="navMenu">
         <li><a href="/">Home</a></li>
-        <li><a href="/volunteers">For Volunteers</a></li>
-        <li><a href="/organizations">For Organizations</a></li>
-      </ul>
-    </nav>
+        <li><a href="/volunteers">Volunteer</a></li>
+        <li><a href="/organizations">Find Volunteers</a></li>
+    </ul>
+</nav>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('navMenu');
+        menu.classList.toggle('mobile-menu-open');
+    }
+</script>
