@@ -15,11 +15,11 @@ app.set('view engine', 'ejs');
 // In Netlify functions, __dirname depends on build. 
 // We usually point to where the files end up or use specific copying.
 // For now, let's try pointing to typical Lambda path or local relative.
-app.set('views', path.join(__dirname, '../../public'));
+app.set('views', path.join(__dirname, 'public'));
 
 // Set up middleware
 // Determine public path based on environment
-const publicPath = path.join(__dirname, '../../public');
+const publicPath = path.join(__dirname, 'public');
 app.use(express.static(publicPath));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

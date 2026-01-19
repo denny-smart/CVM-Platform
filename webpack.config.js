@@ -1,13 +1,22 @@
 const path = require('path');
 
+const CopyPlugin = require("copy-webpack-plugin");
+
 module.exports = {
-    entry: './src/functions/app.js', // Updated entry point
+    entry: './src/functions/app.js',
     output: {
         path: path.resolve(__dirname, 'netlify/functions'),
         filename: 'app.js',
-        libraryTarget: 'commonjs2', // Ensures compatibility with AWS Lambda
+        libraryTarget: 'commonjs',
     },
     target: 'node',
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                { from: "public", to: "public" },
+            ],
+        }),
+    ],
     module: {
         rules: [
             {
@@ -23,7 +32,6 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js', '.json'], // Ensures all required extensions are resolved
+        extensions: ['.js', '.json'],
     },
-    // Removed 'mode' property as it is not supported in Webpack 3
 };
