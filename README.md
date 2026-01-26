@@ -80,17 +80,7 @@ Organizations:
    
     Manage and review volunteer applications.
 
-License
 
-    This project is open-source and licensed under the MIT License. See the LICENSE file for details.
-
-Contact
-
-For questions or collaboration, feel free to reach out:
-
-Email: ownerkirimi@gmail.com
-  
-Linkedln: https://www.linkedin.com/in/denis-kirimi/
 
 
 
